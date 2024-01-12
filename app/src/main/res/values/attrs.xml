@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="text" type="reference"/>
+    <attr name="labels" type="reference|color"/>
+    <attr name="codeicon" format="reference"/>
+    <attr name="java" format="reference"/>
+    <attr name="python" format="reference"/>
+    <attr name="settingsicon" format="reference"/>
+    <attr name="options_icon" format="reference"/>
+    <attr name="newfileicon" format="reference"/>
+</resources>

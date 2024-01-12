@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Notepad</string>
+    <array name="file_extensions">
+        <item>.txt</item>
+        <item>.html</item>
+        <item>.js</item>
+        <item>.css</item>
+        <item>.java</item>
+        <item>.py</item>
+        <item></item>
+    </array>
+</resources>

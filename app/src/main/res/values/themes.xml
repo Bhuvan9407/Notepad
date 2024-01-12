@@ -1,0 +1,24 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.Notepad" parent="Theme.MaterialComponents.DayNight">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">#cccccc</item>
+        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorOnPrimary">@color/black</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondaryVariant">@color/teal_700</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">#808080</item>
+        <item name="text">@drawable/text_file_icon_black</item>
+        <item name="labels">#000000</item>
+        <item name="android:textColor">?attr/labels</item>
+        <item name="settingsicon">@drawable/setting_icon_black</item>
+        <item name="options_icon">@drawable/options_icon_black</item>
+        <item name="newfileicon">@drawable/add_file_icon_black</item>
+        <item name="codeicon">@drawable/code_icon_black</item>
+        <item name="java">@drawable/java_icon_black</item>
+        <item name="python">@drawable/python_icon_black</item>
+    </style>
+</resources>
