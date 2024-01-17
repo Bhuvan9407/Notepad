@@ -34,6 +34,7 @@ import androidx.core.content.FileProvider;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.io.File;
+import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.Objects;
 
@@ -304,7 +305,72 @@ public class MainActivity extends AppCompatActivity {
                                 shareIntent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
 
                                 startActivity(Intent.createChooser(shareIntent, "Share"+ finalFile_name));
+                                return true;
+                            case R.id.file_info:
+                                Dialog dialog1 = new Dialog(MainActivity.this);
+                                dialog1.requestWindowFeature(Window.FEATURE_NO_TITLE);
+                                dialog1.setCancelable(true);
+                                dialog1.setContentView(R.layout.file_info_popup);
+                                TextView filename = dialog1.findViewById(R.id.file_name);
+                                TextView filetype = dialog1.findViewById(R.id.file_type);
+                                TextView filesize = dialog1.findViewById(R.id.file_size);
+                                TextView filemodified = dialog1.findViewById(R.id.file_modified);
+                                Button okbtn = dialog1.findViewById((R.id.file_info_ok_btn));
+                                filename.setText(finalFile_name);
+                                String path = name.trim();
+                                File file = new File(path);
+                                Double file_size = (double) file.length();
+                                String Finalfile_size = null ;
+                                  if (file_size <= 600){
+                                    Finalfile_size = String.valueOf(file_size) + " Bytes";
+                                } else if (file_size > 600) {
+                                    Finalfile_size = String.valueOf(file_size/1024) + " KB";
+                                } else if (file_size/1024 >600) {
+                                    Finalfile_size = String.valueOf(file_size/1024/1024) + " MB";
+                                  }
+                                int file_size2 = Integer.parseInt(String.valueOf(file.length()/1024));
+                                filesize.setText(String.valueOf(file_size2) + " KB");
+                                SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+                                String datemodified = formatter.format(file.lastModified());
+                                filemodified.setText(datemodified);
+                                String Extension = finalExtension.trim();
+                                Log.d("extension1", Extension);
+                                switch(Extension){
+                                    case ".txt":
+                                        filetype.setText("Plain Text File");
+                                        break;
 
+                                    case ".java":
+                                        filetype.setText("Java File");
+                                        break;
+
+                                    case ".html":
+                                        filetype.setText("HTML Script");
+                                        break;
+
+                                    case ".css":
+                                        filetype.setText("CSS Script");
+                                        break;
+
+                                    case ".xml":
+                                        filetype.setText("XML Script");
+                                        break;
+
+                                    case ".js":
+                                        filetype.setText("JavaScript file");
+                                        break;
+
+                                    case ".py":
+                                        filetype.setText("Python File");
+                                        break;
+
+                                    case "":
+                                        String nothing;
+                                        break;
+                                }
+                                okbtn.setOnClickListener(v -> dialog1.dismiss());
+                                dialog1.show();
+                                return true;
                         }
                         return false;
                     }

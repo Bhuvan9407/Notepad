@@ -10,9 +10,9 @@
               <option name="connection">
                 <ConnectionSetting>
                   <option name="appId" value="com.bhuvanvg.notepad" />
-                  <option name="mobileSdkAppId" value="1:942812774345:android:8b5fef003c0d1872093218" />
-                  <option name="projectId" value="notepad-9e683" />
-                  <option name="projectNumber" value="942812774345" />
+                  <option name="mobileSdkAppId" value="1:34028264535:android:1ff128f73133c0a2f11712" />
+                  <option name="projectId" value="notepad-9a4ce" />
+                  <option name="projectNumber" value="34028264535" />
                 </ConnectionSetting>
               </option>
               <option name="signal" value="SIGNAL_UNSPECIFIED" />

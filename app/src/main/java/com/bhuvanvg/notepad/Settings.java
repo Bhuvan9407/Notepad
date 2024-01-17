@@ -4,10 +4,13 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.RadioButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
+
+import com.google.firebase.firestore.FirebaseFirestore;
 
 public class Settings extends AppCompatActivity {
     public static final String PREFS_NAME = "MyPrefs";
@@ -22,6 +25,10 @@ public class Settings extends AppCompatActivity {
         System_radio_btn = findViewById(R.id.radio_system);
         Light_radio_btn = findViewById(R.id.radio_light);
         Dark_radio_btn = findViewById(R.id.radio_dark);
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        TextView appversion = findViewById(R.id.appversion);
+        String versionName = BuildConfig.VERSION_NAME;
+        appversion.setText("App Version : " + versionName);
         switch (dpmode) {
             case "light":
                 Light_radio_btn.setChecked(true);
